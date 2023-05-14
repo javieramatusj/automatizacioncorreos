@@ -1,0 +1,21 @@
+
+import smtplib
+import win32com.client as win32
+
+# objeto de outlook
+
+outlook = win32.Dispatch("Outlook.Application")
+
+mail= outlook.CreateItem(0)
+
+# a quien va dirijido
+mail.To= 'Hector2@outlook.com'
+
+# el asunto del correo
+mail.Subject = 'Prueba de correo'
+
+# mensaje
+mail.body = 'Esto es un mensaje de prueba'
+
+# envío
+mail.Send()
